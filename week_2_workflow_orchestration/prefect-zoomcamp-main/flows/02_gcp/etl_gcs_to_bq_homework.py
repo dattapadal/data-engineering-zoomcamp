@@ -31,7 +31,7 @@ def write_bq(df: pd.DataFrame) -> int:
     gcp_credentials_block = GcpCredentials.load("zoom-gcp-creds-akash")
 
     df.to_gbq(
-        destination_table="dezoomcamp.rides",
+        destination_table="dezoomcamp.rides1",
         project_id="ny-rides-shivani",
         credentials=gcp_credentials_block.get_credentials_from_service_account(),
         chunksize=500_000,
@@ -50,7 +50,7 @@ def etl_gcs_to_bq(color, year, month) -> int:
 
 
 if __name__ == "__main__":
-    color = "yellow"
+    color = "green"
     year = 2019
     months = [2,3]
     rows = 0
